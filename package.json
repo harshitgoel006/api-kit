@@ -1,24 +1,17 @@
 {
   "name": "@goelharshit006/api-kit",
-
-  "version": "1.0.0",
-
+  "version": "1.0.1",
   "description": "Production-ready API utilities and middleware toolkit for Express.js",
-
   "type": "module",
-
   "main": "./src/index.js",
-
   "exports": {
     ".": "./src/index.js"
   },
-
   "files": [
     "src",
     "README.md",
     "LICENSE"
   ],
-
   "keywords": [
     "express",
     "expressjs",
@@ -31,23 +24,17 @@
     "nodejs",
     "backend"
   ],
-
   "author": "Harshit",
-
   "license": "MIT",
-
   "engines": {
     "node": ">=16"
   },
-
   "repository": {
     "type": "git",
     "url": "https://github.com/harshitgoel006/api-kit.git"
   },
-
   "bugs": {
     "url": "https://github.com/harshitgoel006/api-kit/issues"
   },
-
   "homepage": "https://github.com/harshitgoel006/api-kit#readme"
 }
