@@ -1,6 +1,6 @@
 {
   "name": "@goelharshit006/api-kit",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Production-ready API utilities and middleware toolkit for Express.js",
   "type": "module",
   "main": "./src/index.js",
