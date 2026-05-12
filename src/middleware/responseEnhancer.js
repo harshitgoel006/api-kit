@@ -1,34 +1,39 @@
-import ApiResponse from "../core/ApiResponse";
+import { ApiResponse } from "../core/ApiResponse.js";
 
-const responseEnhancer = (req, res, next) =>{
+export const responseEnhancer = (req, res, next) => {
+  res.success = function (data = null, message = "Success", statusCode = 200) {
+    return res
+      .status(statusCode)
+      .json(new ApiResponse(statusCode, data, message));
+  };
 
-    res.success = (
-        data = null,
-        message = "Success",
-        statusCode = 200
-    ) => {
-        return res 
-        .status(statusCode)
-        .json(new ApiResponse(statusCode, data, message));
+  res.fail = function (
+    message = "Something went wrong",
+    statusCode = 500,
+    code = "REQUEST_FAILED",
+    details = null,
+  ) {
+    const response = {
+      success: false,
+      message,
+      code,
+      timestamp: new Date().toISOString(),
     };
 
-    res.created = (
-        data = null,
-        message = "Resource created"
-    ) => {
-        return res 
-        .status(201)
-        .json(new ApiResponse(201, data,  message));
-    };
+    if (details) {
+      response.details = details;
+    }
 
-    res.noContent = () => {
-        return res
-        .status(204)
-        .send();
-    };
+    return res.status(statusCode).json(response);
+  };
 
-    next();
+  res.created = function (data = null, message = "Resource created") {
+    return res.success(data, message, 201);
+  };
 
+  res.noContent = function () {
+    return res.status(204).send();
+  };
+
+  next();
 };
-
-export default responseEnhancer;

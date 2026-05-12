@@ -1,20 +1,16 @@
-export const getPaginationMeta = ({
-    page = 1,
-    limit = 10, 
-    totalItem = 0,
-}) => {
+export const getPaginationMeta = ({ page = 1, limit = 10, totalItems = 0 }) => {
 
-    const currentPage = Number(page);
-    const currentLimit = Number(limit);
+  const currentPage = Math.max(Number(page) || 1, 1);
+  const currentLimit = Math.max(Number(limit) || 10, 1);
+  const totalPages = Math.ceil(totalItems / currentLimit);
 
-    const totalPages = Math.ceil(totalItem/currentLimit);
-
-    return {
-        page:currentPage,
-        limit:currentLimit,
-        totalItem,
-        totalPages,
-        hasNextPage: currentPage<totalPages,
-        hasPrevPage: currentPage > 1,
-    };
+  return {
+    page: currentPage,
+    limit: currentLimit,
+    totalItems,
+    totalPages,
+    hasNextPage: currentPage < totalPages,
+    hasPrevPage: currentPage > 1,
+    
+  };
 };
