@@ -1,3 +1,5 @@
+// This module serves as the main entry point for the express-api-kit package. It exports various components such as ApiError, ApiResponse, asyncHandler, errorHandler, responseEnhancer, notFoundHandler, getPaginationMeta, buildQueryOptions, and pickFields. These components are organized into core functionalities, middleware, and utility functions to provide a comprehensive toolkit for building Express.js APIs with standardized error handling, response formatting, pagination support, and query building capabilities.
+
 export { ApiError } from "./core/ApiError.js";
 
 export { ApiResponse } from "./core/ApiResponse.js";

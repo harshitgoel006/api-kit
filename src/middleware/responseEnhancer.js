@@ -1,5 +1,8 @@
+// This module defines the responseEnhancer function, which is an Express.js middleware that enhances the response object by adding custom methods for sending standardized success and failure responses. It adds three methods to the response object: res.success for sending successful responses, res.fail for sending error responses, and res.created for sending responses when a resource is created. It also includes a res.noContent method for sending a 204 No Content response. This middleware allows for consistent response formatting across the application.
+
 import { ApiResponse } from "../core/ApiResponse.js";
 
+// This function is an Express.js middleware that enhances the response object by adding custom methods for sending standardized success and failure responses. It adds three methods to the response object: res.success for sending successful responses, res.fail for sending error responses, and res.created for sending responses when a resource is created. It also includes a res.noContent method for sending a 204 No Content response. This middleware allows for consistent response formatting across the application.
 export const responseEnhancer = (req, res, next) => {
   res.success = function (data = null, message = "Success", statusCode = 200) {
     return res

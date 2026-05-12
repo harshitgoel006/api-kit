@@ -1,4 +1,4 @@
-// This class represents an error that can be thrown in the API. It extends the built-in Error class and adds additional properties such as statusCode, code, and details. This allows for more structured error handling in the API.
+// This module defines the ApiError class, which is used to standardize the structure of API errors across the application.
 
 export class ApiError extends Error {
 
