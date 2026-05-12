@@ -1,0 +1,33 @@
+{
+  "name": "@goelharshit006/api-kit",
+  "version": "1.0.0",
+  "description": "Production-ready API utilities and middleware toolkit for Express.js",
+  "main": "src/index.js",
+  "type": "module",
+
+  "exports": {
+    ".": "./src/index.js"
+  },
+
+  "files": [
+    "src"
+  ],
+
+  "keywords": [
+    "express",
+    "api",
+    "middleware",
+    "error-handler",
+    "pagination",
+    "async-handler",
+    "response-handler",
+    "nodejs"
+  ],
+
+  "author": "Harshit",
+  "license": "ISC",
+
+  "engines": {
+    "node": ">=16"
+  }
+}
